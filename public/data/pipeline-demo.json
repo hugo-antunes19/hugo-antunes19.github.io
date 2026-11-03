@@ -1,0 +1,506 @@
+[
+  {
+    "batch": 1,
+    "stage": "bronze",
+    "records": 1200,
+    "latency_ms": 46,
+    "sample": true
+  },
+  {
+    "batch": 1,
+    "stage": "silver",
+    "records": 1152,
+    "latency_ms": 71,
+    "sample": true
+  },
+  {
+    "batch": 1,
+    "stage": "gold",
+    "records": 1116,
+    "latency_ms": 34,
+    "sample": true
+  },
+  {
+    "batch": 2,
+    "stage": "bronze",
+    "records": 1373,
+    "latency_ms": 59,
+    "sample": true
+  },
+  {
+    "batch": 2,
+    "stage": "silver",
+    "records": 1318,
+    "latency_ms": 84,
+    "sample": true
+  },
+  {
+    "batch": 2,
+    "stage": "gold",
+    "records": 1277,
+    "latency_ms": 47,
+    "sample": true
+  },
+  {
+    "batch": 3,
+    "stage": "bronze",
+    "records": 1546,
+    "latency_ms": 72,
+    "sample": true
+  },
+  {
+    "batch": 3,
+    "stage": "silver",
+    "records": 1484,
+    "latency_ms": 97,
+    "sample": true
+  },
+  {
+    "batch": 3,
+    "stage": "gold",
+    "records": 1438,
+    "latency_ms": 60,
+    "sample": true
+  },
+  {
+    "batch": 4,
+    "stage": "bronze",
+    "records": 1719,
+    "latency_ms": 56,
+    "sample": true
+  },
+  {
+    "batch": 4,
+    "stage": "silver",
+    "records": 1650,
+    "latency_ms": 81,
+    "sample": true
+  },
+  {
+    "batch": 4,
+    "stage": "gold",
+    "records": 1599,
+    "latency_ms": 44,
+    "sample": true
+  },
+  {
+    "batch": 5,
+    "stage": "bronze",
+    "records": 1242,
+    "latency_ms": 69,
+    "sample": true
+  },
+  {
+    "batch": 5,
+    "stage": "silver",
+    "records": 1192,
+    "latency_ms": 94,
+    "sample": true
+  },
+  {
+    "batch": 5,
+    "stage": "gold",
+    "records": 1155,
+    "latency_ms": 57,
+    "sample": true
+  },
+  {
+    "batch": 6,
+    "stage": "bronze",
+    "records": 1415,
+    "latency_ms": 53,
+    "sample": true
+  },
+  {
+    "batch": 6,
+    "stage": "silver",
+    "records": 1358,
+    "latency_ms": 78,
+    "sample": true
+  },
+  {
+    "batch": 6,
+    "stage": "gold",
+    "records": 1316,
+    "latency_ms": 41,
+    "sample": true
+  },
+  {
+    "batch": 7,
+    "stage": "bronze",
+    "records": 1588,
+    "latency_ms": 66,
+    "sample": true
+  },
+  {
+    "batch": 7,
+    "stage": "silver",
+    "records": 1524,
+    "latency_ms": 91,
+    "sample": true
+  },
+  {
+    "batch": 7,
+    "stage": "gold",
+    "records": 1477,
+    "latency_ms": 54,
+    "sample": true
+  },
+  {
+    "batch": 8,
+    "stage": "bronze",
+    "records": 1761,
+    "latency_ms": 50,
+    "sample": true
+  },
+  {
+    "batch": 8,
+    "stage": "silver",
+    "records": 1691,
+    "latency_ms": 75,
+    "sample": true
+  },
+  {
+    "batch": 8,
+    "stage": "gold",
+    "records": 1638,
+    "latency_ms": 38,
+    "sample": true
+  },
+  {
+    "batch": 9,
+    "stage": "bronze",
+    "records": 1284,
+    "latency_ms": 63,
+    "sample": true
+  },
+  {
+    "batch": 9,
+    "stage": "silver",
+    "records": 1233,
+    "latency_ms": 88,
+    "sample": true
+  },
+  {
+    "batch": 9,
+    "stage": "gold",
+    "records": 1194,
+    "latency_ms": 51,
+    "sample": true
+  },
+  {
+    "batch": 10,
+    "stage": "bronze",
+    "records": 1457,
+    "latency_ms": 47,
+    "sample": true
+  },
+  {
+    "batch": 10,
+    "stage": "silver",
+    "records": 1399,
+    "latency_ms": 72,
+    "sample": true
+  },
+  {
+    "batch": 10,
+    "stage": "gold",
+    "records": 1355,
+    "latency_ms": 35,
+    "sample": true
+  },
+  {
+    "batch": 11,
+    "stage": "bronze",
+    "records": 1630,
+    "latency_ms": 60,
+    "sample": true
+  },
+  {
+    "batch": 11,
+    "stage": "silver",
+    "records": 1565,
+    "latency_ms": 85,
+    "sample": true
+  },
+  {
+    "batch": 11,
+    "stage": "gold",
+    "records": 1516,
+    "latency_ms": 48,
+    "sample": true
+  },
+  {
+    "batch": 12,
+    "stage": "bronze",
+    "records": 1803,
+    "latency_ms": 73,
+    "sample": true
+  },
+  {
+    "batch": 12,
+    "stage": "silver",
+    "records": 1731,
+    "latency_ms": 98,
+    "sample": true
+  },
+  {
+    "batch": 12,
+    "stage": "gold",
+    "records": 1677,
+    "latency_ms": 61,
+    "sample": true
+  },
+  {
+    "batch": 13,
+    "stage": "bronze",
+    "records": 1326,
+    "latency_ms": 57,
+    "sample": true
+  },
+  {
+    "batch": 13,
+    "stage": "silver",
+    "records": 1273,
+    "latency_ms": 82,
+    "sample": true
+  },
+  {
+    "batch": 13,
+    "stage": "gold",
+    "records": 1233,
+    "latency_ms": 45,
+    "sample": true
+  },
+  {
+    "batch": 14,
+    "stage": "bronze",
+    "records": 1499,
+    "latency_ms": 70,
+    "sample": true
+  },
+  {
+    "batch": 14,
+    "stage": "silver",
+    "records": 1439,
+    "latency_ms": 95,
+    "sample": true
+  },
+  {
+    "batch": 14,
+    "stage": "gold",
+    "records": 1394,
+    "latency_ms": 58,
+    "sample": true
+  },
+  {
+    "batch": 15,
+    "stage": "bronze",
+    "records": 1672,
+    "latency_ms": 54,
+    "sample": true
+  },
+  {
+    "batch": 15,
+    "stage": "silver",
+    "records": 1605,
+    "latency_ms": 79,
+    "sample": true
+  },
+  {
+    "batch": 15,
+    "stage": "gold",
+    "records": 1555,
+    "latency_ms": 42,
+    "sample": true
+  },
+  {
+    "batch": 16,
+    "stage": "bronze",
+    "records": 1845,
+    "latency_ms": 67,
+    "sample": true
+  },
+  {
+    "batch": 16,
+    "stage": "silver",
+    "records": 1771,
+    "latency_ms": 92,
+    "sample": true
+  },
+  {
+    "batch": 16,
+    "stage": "gold",
+    "records": 1716,
+    "latency_ms": 55,
+    "sample": true
+  },
+  {
+    "batch": 17,
+    "stage": "bronze",
+    "records": 1368,
+    "latency_ms": 51,
+    "sample": true
+  },
+  {
+    "batch": 17,
+    "stage": "silver",
+    "records": 1313,
+    "latency_ms": 76,
+    "sample": true
+  },
+  {
+    "batch": 17,
+    "stage": "gold",
+    "records": 1272,
+    "latency_ms": 39,
+    "sample": true
+  },
+  {
+    "batch": 18,
+    "stage": "bronze",
+    "records": 1541,
+    "latency_ms": 64,
+    "sample": true
+  },
+  {
+    "batch": 18,
+    "stage": "silver",
+    "records": 1479,
+    "latency_ms": 89,
+    "sample": true
+  },
+  {
+    "batch": 18,
+    "stage": "gold",
+    "records": 1433,
+    "latency_ms": 52,
+    "sample": true
+  },
+  {
+    "batch": 19,
+    "stage": "bronze",
+    "records": 1714,
+    "latency_ms": 48,
+    "sample": true
+  },
+  {
+    "batch": 19,
+    "stage": "silver",
+    "records": 1645,
+    "latency_ms": 73,
+    "sample": true
+  },
+  {
+    "batch": 19,
+    "stage": "gold",
+    "records": 1594,
+    "latency_ms": 36,
+    "sample": true
+  },
+  {
+    "batch": 20,
+    "stage": "bronze",
+    "records": 1237,
+    "latency_ms": 61,
+    "sample": true
+  },
+  {
+    "batch": 20,
+    "stage": "silver",
+    "records": 1188,
+    "latency_ms": 86,
+    "sample": true
+  },
+  {
+    "batch": 20,
+    "stage": "gold",
+    "records": 1150,
+    "latency_ms": 49,
+    "sample": true
+  },
+  {
+    "batch": 21,
+    "stage": "bronze",
+    "records": 1410,
+    "latency_ms": 74,
+    "sample": true
+  },
+  {
+    "batch": 21,
+    "stage": "silver",
+    "records": 1354,
+    "latency_ms": 99,
+    "sample": true
+  },
+  {
+    "batch": 21,
+    "stage": "gold",
+    "records": 1311,
+    "latency_ms": 62,
+    "sample": true
+  },
+  {
+    "batch": 22,
+    "stage": "bronze",
+    "records": 1583,
+    "latency_ms": 58,
+    "sample": true
+  },
+  {
+    "batch": 22,
+    "stage": "silver",
+    "records": 1520,
+    "latency_ms": 83,
+    "sample": true
+  },
+  {
+    "batch": 22,
+    "stage": "gold",
+    "records": 1472,
+    "latency_ms": 46,
+    "sample": true
+  },
+  {
+    "batch": 23,
+    "stage": "bronze",
+    "records": 1756,
+    "latency_ms": 71,
+    "sample": true
+  },
+  {
+    "batch": 23,
+    "stage": "silver",
+    "records": 1686,
+    "latency_ms": 96,
+    "sample": true
+  },
+  {
+    "batch": 23,
+    "stage": "gold",
+    "records": 1633,
+    "latency_ms": 59,
+    "sample": true
+  },
+  {
+    "batch": 24,
+    "stage": "bronze",
+    "records": 1279,
+    "latency_ms": 55,
+    "sample": true
+  },
+  {
+    "batch": 24,
+    "stage": "silver",
+    "records": 1228,
+    "latency_ms": 80,
+    "sample": true
+  },
+  {
+    "batch": 24,
+    "stage": "gold",
+    "records": 1189,
+    "latency_ms": 43,
+    "sample": true
+  }
+]

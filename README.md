@@ -1,32 +1,49 @@
-# Hugo Antunes — Portfólio
+# Hugo Antunes / Interactive Lakehouse
 
-Site estático de Engenharia de Dados e Computação. HTML, CSS e JavaScript sem build.
+Portfólio estático de Engenharia de Dados e Computação. Vite + React + TypeScript, Tailwind, Framer Motion, Lucide, DuckDB-Wasm, React Flow, Recharts e WebGL nativo.
 
-Site: https://hugo-antunes19.github.io/
+## Executar
+
+Node.js 24 recomendado.
+
+```sh
+npm ci
+npm run dev
+npm test
+npm run build
+npm run preview
+```
+
+O build gera `dist/`. GitHub Actions compila e publica esse diretório no Pages. Não há backend, banco remoto, credenciais ou serviços pagos. Wasm e worker são distribuídos junto com o site; não dependem de um CDN para o banco.
+
+## Banco no navegador
+
+- `public/data/projects.json`: quatro projetos reais fornecidos por Hugo.
+- `bronze.projects`: ingestão do JSON local.
+- `silver.projects`: deduplicação e validação dos identificadores e títulos.
+- `gold.projects`: catálogo para consumo.
+- `gold.technologies`: tecnologias normalizadas por projeto.
+- `public/data/pipeline-demo.json` → `demo.pipeline_events`: dados sintéticos para a demonstração de throughput.
+
+Os filtros no modo Executive executam SQL no DuckDB. O modo SQL / Engineer oferece editor com Ctrl/Cmd+Enter, exemplos, schema browser e EXPLAIN ANALYZE real. O REPL permite consultas locais; mutações, múltiplas instruções e fontes externas são bloqueadas. Resultados exibidos limitados a 200 linhas. Um worker é interrompido após 10s de consulta e pode ser reconectado. Limite de memória SQL: 128MB. A carga do módulo Wasm é feita no navegador (aproximadamente 41MB sem compressão).
+
+## Honestidade dos dados
+
+Descrições profissionais são baseadas nas informações do usuário. Não há métricas de impacto inventadas, certificações não confirmadas nem dados de clientes. DAGs dos projetos são representações conceituais; não documentação de ambientes profissionais. O ERD representa as tabelas efetivamente criadas no catálogo local.
+
+Throughput, execução do DAG e FinOps são simulações didáticas identificadas na interface. Latência SQL é medida com `performance.now()` incluindo comunicação com o worker. JS heap usa `performance.memory` quando disponível: é memória JavaScript do navegador, não memória exclusiva do DuckDB. O identificador `gh-pages-edge-01` é visual; o banco não executa em um cluster remoto.
+
+A comparação FinOps segue t = 680 / sqrt(compute): um modelo ilustrativo, sem preços reais nem benchmark de provedor.
+
+## Acessibilidade e compatibilidade
+
+Controles HTML nativos, foco visível, labels, modo de movimento reduzido e fallback estático de WebGL. O canvas pausa quando a página fica oculta. Sem JavaScript, um resumo dos projetos e o GitHub continuam acessíveis. WebAssembly/Web Workers são necessários para as consultas. Falhas de inicialização mantêm o conteúdo e permitem reconectar.
 
 ## Conteúdo
 
-- Maracanomali: detecção de anomalias em vídeo com autoencoder. Código público em https://github.com/hugo-antunes19/maracanomali-public.
-- Framework profissional de Terragrunt/Terraform.
-- Data observability com Datadog.
-- Fluxo ETL para leitura de documentos e conferência de conformidade entre fontes, com OCR, Mistral, Databricks, Foundry e APIs.
+- Framework Terragrunt/Terraform.
+- Observabilidade de dados com Datadog.
+- ETL documental: OCR, Mistral, Databricks, Foundry e APIs.
+- [Maracanomali público](https://github.com/hugo-antunes19/maracanomali-public).
 
-As descrições profissionais se baseiam nas informações fornecidas por Hugo. Não são publicados códigos internos, documentos de clientes ou métricas de resultado não informadas. Diagramas são representações conceituais, não capturas de sistemas reais.
-
-## Estrutura
-
-- index.html: conteúdo, diagramas SVG, navegação e detalhes dos projetos.
-- style.css: tema escuro, layout responsivo e tipografia.
-- script.js: filtros por categoria e ano do rodapé.
-- favicon.svg: identidade visual.
-- .nojekyll: publicação estática no GitHub Pages.
-
-## Publicação
-
-GitHub Pages configurado na branch main, pasta /(root). Um push na main inicia a publicação.
-
-## Prévia
-
-Abra index.html no navegador ou execute python -m http.server 4173 --bind 127.0.0.1 nesta pasta.
-
-As fontes externas têm alternativas locais. Sem JavaScript, todos os projetos continuam visíveis e os detalhes usam HTML nativo.
+As fontes tipográficas do Google são opcionais e têm alternativas locais.

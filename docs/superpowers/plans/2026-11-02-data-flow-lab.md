@@ -18,7 +18,7 @@
 - [x] Implementar WebGL com fallback e DAGs com simulação explícita.
 - [x] Implementar gráficos e distinguir dados reais/didáticos.
 - [x] Revisão independente: limite antes da materialização e serialização da inicialização/schema corrigidos. Quatro testes passaram. Build passou. Navegador local confirmou filtros, JOIN, EXPLAIN ANALYZE, limite 200 e timeout/reconexão; celular sem overflow horizontal.
-- [ ] Publicar por GitHub Actions e confirmar deploy e consultas reais.
+- [x] Publicado por GitHub Actions (run 41567991441). Produção conectou DuckDB 1.5.4 e executou GROUP BY no catálogo, retornando quatro categorias com uma linha cada.
 
 ## Verificação
 

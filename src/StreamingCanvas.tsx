@@ -35,6 +35,26 @@ void main() {
   col += vec3(0.045,0.075,0.095)*grid*0.19;
   col += vec3(0.018,0.12,0.16)*exp(-abs(p.y-0.52)*9.0)*0.10;
 
+  // A compact B-tree index above the columnar blocks; the pointer selects a branch.
+  vec3 indexColor = vec3(.19,.42,.57);
+  vec2 root = vec2(.65,.17);
+  vec2 left = vec2(.48,.26);
+  vec2 right = vec2(.82,.26);
+  float branch = step(0.0,pointer.x);
+  col += indexColor * line(p,root,left,.0012)*(.5+(1.0-branch)*.5);
+  col += indexColor * line(p,root,right,.0012)*(.5+branch*.5);
+  col += vec3(.28,.72,.85)*exp(-length(p-root)*90.0)*.55;
+  for(int j=0;j<4;j++) {
+    float k=float(j);
+    vec2 leaf=vec2(.38+k*.18,.35);
+    vec2 parent=j<2 ? left : right;
+    float selected=j<2 ? 1.0-branch : branch;
+    col += indexColor*line(p,parent,leaf,.001)*(.4+selected*.5);
+    float tile=1.0-smoothstep(.0,.002,box(p,leaf,vec2(.025,.012)));
+    col=mix(col,vec3(.10,.23,.31)+selected*vec3(.05,.12,.15),tile);
+    col += indexColor*exp(-length(p-parent)*110.0)*.24;
+  }
+
   // Three connected processing lanes.
   float route = line(p, vec2(.06,.54), vec2(.92,.54), .0015);
   col += vec3(.06,.19,.23)*route*.58;
@@ -219,7 +239,7 @@ export default function StreamingCanvas() {
   }, []);
 
   return (
-    <section className="stream-visual" role="img" aria-label="Simulação visual do fluxo de dados: ingestão em Bronze, refinamento em Silver e agregação columnar em Gold">
+    <section className="stream-visual" role="img" aria-label="Simulação visual de um índice B-tree e do fluxo de dados: ingestão em Bronze, refinamento em Silver e agregação columnar em Gold">
       <style>{`
         .stream-visual{position:relative;width:100%;height:300px;overflow:hidden;border:1px solid rgba(120,157,177,.16);border-radius:16px;background:#07090e;color:#dce8ee;isolation:isolate}
         .stream-visual canvas{display:block;width:100%;height:100%}

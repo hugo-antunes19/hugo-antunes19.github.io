@@ -5,6 +5,7 @@ import { Area, AreaChart, CartesianGrid, Line, LineChart, ResponsiveContainer, T
 import catalog from '../public/data/projects.json';
 import demo from '../public/data/pipeline-demo.json';
 import { filterQuery } from './query-policy.mjs';
+import Overview from './Overview';
 import type { EngineStatus, Project, QueryMetric, QueryResult } from './types';
 
 const StreamingCanvas = lazy(() => import('./StreamingCanvas'));
@@ -76,6 +77,7 @@ export default function App() {
   const [explain, setExplain] = useState('');
   const queryNumber = useRef(0);
   const operation = useRef(0);
+  const engineStarted = useRef(false);
   const reduced = useReducedMotion();
   const project = projects.find(p => p.id === selected)!;
 
@@ -95,11 +97,14 @@ export default function App() {
     } catch (e) { if (operation.current === op) { setStatus('error'); setError(e instanceof Error ? e.message : String(e)); } }
     finally { if (operation.current === op) setBusy(false); }
   }
-  useEffect(() => { void initialize(); }, []);
   useEffect(() => {
+    if (mode === 'engineer' && !engineStarted.current) { engineStarted.current = true; void initialize(); }
+  }, [mode]);
+  useEffect(() => {
+    if (mode !== 'engineer') return;
     const sample = () => { const p = performance as Performance & { memory?: { usedJSHeapSize: number } }; setMemory(p.memory ? p.memory.usedJSHeapSize / 1048576 : null); };
     sample(); const timer = window.setInterval(sample, 4000); return () => clearInterval(timer);
-  }, []);
+  }, [mode]);
 
   async function execute(sql: string, filtered = false) {
     if (busy || status !== 'ready') return;
@@ -133,7 +138,9 @@ export default function App() {
   }
   const filteredProjects = projects.filter(p => visibleIds.includes(p.id));
 
-  return <><a className="skip" href="#main">Pular para o conteúdo</a><header className="topbar"><a href="#" className="brand"><span className="brand-icon"><Database size={19}/></span>hugo<span className="brand-dot">.</span><span className="brand-sub">data engineering</span></a><div className="persona-toggle" aria-label="Modo de visualização"><button className={mode === 'executive' ? 'active' : ''} onClick={() => setMode('executive')} aria-pressed={mode === 'executive'}><Gauge size={14}/><span>Executive</span></button><button className={mode === 'engineer' ? 'active' : ''} onClick={() => setMode('engineer')} aria-pressed={mode === 'engineer'}><Code2 size={14}/><span>SQL / Engineer</span></button></div><a className="github-link" href="https://github.com/hugo-antunes19" target="_blank" rel="noopener noreferrer"><Code2 size={17}/><span>GitHub</span><ArrowUpRight size={13}/></a></header>
+  if (mode === 'executive') return <Overview projects={projects} onEngineer={() => { setMode('engineer'); window.scrollTo({ top: 0, behavior: 'instant' }); }} />;
+
+  return <><a className="skip" href="#main">Pular para o conteúdo</a><header className="topbar"><a href="#" className="brand"><span className="brand-icon"><Database size={19}/></span>hugo<span className="brand-dot">.</span><span className="brand-sub">data engineering</span></a><div className="persona-toggle" aria-label="Modo de visualização"><button className="" onClick={() => setMode('executive')} aria-pressed={false}><Gauge size={14}/><span>Apresentação</span></button><button className={mode === 'engineer' ? 'active' : ''} onClick={() => setMode('engineer')} aria-pressed={mode === 'engineer'}><Code2 size={14}/><span>Modo técnico</span></button></div><a className="github-link" href="https://github.com/hugo-antunes19" target="_blank" rel="noopener noreferrer"><Code2 size={17}/><span>GitHub</span><ArrowUpRight size={13}/></a></header>
     <aside className="sidebar"><div className="sidebar-label">WORKSPACE</div><a href="#main" className="sidebar-active"><Layers size={16}/><span>Overview</span></a><a href="#projetos"><Blocks size={16}/><span>Project catalog</span><small>04</small></a><a href="#lineage"><GitBranch size={16}/><span>Data lineage</span></a><a href="#observabilidade"><Activity size={16}/><span>Observability</span></a><button onClick={() => { setMode('engineer'); requestAnimationFrame(() => document.getElementById('query-lab')?.scrollIntoView({ behavior: reduced ? 'instant' : 'smooth' })); }}><Terminal size={16}/><span>SQL workspace</span></button><div className="sidebar-divider"/><div className="sidebar-label">LAKEHOUSE</div>{(['bronze','silver','gold'] as const).map(layer => <button key={layer} className={`layer-link ${layer}`} onClick={() => { setMode('engineer'); if (status === 'ready') void inspectTable(`${layer}.projects`); }}><Database size={14}/><span>{layer}</span><small>01</small></button>)}<div className="sidebar-bottom"><span className="online-dot"/>Browser-local engine<br/><small>Zero backend. Your compute.</small></div></aside>
     <main id="main" className="main-shell"><div className="breadcrumb"><span>workspace</span><ChevronRight size={12}/><span>hugo_antunes</span><ChevronRight size={12}/><b>overview</b><span className="env-badge">PERSONAL LAKEHOUSE</span></div>
       <section className="hero"><div className="hero-copy"><div className="hero-eyebrow"><span className="online-dot"/> DATA & DATABASE ENGINEER</div><h1>Da origem do dado<br/>à próxima <em>decisão.</em></h1><p>Sou Hugo Antunes. Conecto infraestrutura, observabilidade e inteligência artificial para transformar informação em sistemas que fazem sentido.</p><div className="manifest"><span><span className="syntax-purple">education</span> <b>:</b> Engenharia de Computação · UFRJ</span><span><span className="syntax-purple">focus</span> <b>:</b> Data Engineering & Databases</span><span><span className="syntax-purple">runtime</span> <b>:</b> Seu navegador. SQL de verdade.</span></div><div className="hero-actions"><a href="#projetos" className="primary-button">Explore os projetos <ArrowDown size={14}/></a><button className="text-button" onClick={() => { setMode('engineer'); requestAnimationFrame(() => document.getElementById('query-lab')?.scrollIntoView({ behavior: reduced ? 'instant' : 'smooth' })); }}><SquareTerminal size={15}/> Execute uma query</button></div></div><div className="hero-visual"><div className="visual-top"><span><Workflow size={13}/> INGESTION ENGINE</span><span className="mono muted">CLIENT-SIDE RENDER</span></div><Suspense fallback={<div className="canvas-fallback">BRONZE → SILVER → GOLD</div>}><StreamingCanvas/></Suspense></div></section>

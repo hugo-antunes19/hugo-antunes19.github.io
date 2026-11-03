@@ -25,7 +25,7 @@ O build gera `dist/`. GitHub Actions compila e publica esse diretório no Pages.
 - `gold.technologies`: tecnologias normalizadas por projeto.
 - `public/data/pipeline-demo.json` → `demo.pipeline_events`: dados sintéticos para a demonstração de throughput.
 
-Os filtros no modo Executive executam SQL no DuckDB. O modo SQL / Engineer oferece editor com Ctrl/Cmd+Enter, exemplos, schema browser e EXPLAIN ANALYZE real. O REPL permite consultas locais; mutações, múltiplas instruções e fontes externas são bloqueadas. Resultados exibidos limitados a 200 linhas. Um worker é interrompido após 10s de consulta e pode ser reconectado. Limite de memória SQL: 128MB. A carga do módulo Wasm é feita no navegador (aproximadamente 41MB sem compressão).
+Os filtros no laboratório técnico executam SQL no DuckDB. Esse modo oferece editor com Ctrl/Cmd+Enter, exemplos, schema browser e EXPLAIN ANALYZE real. O REPL permite consultas locais; mutações, múltiplas instruções e fontes externas são bloqueadas. Resultados exibidos limitados a 200 linhas. Um worker é interrompido após 10s de consulta e pode ser reconectado. Limite de memória SQL: 128MB. A carga do módulo Wasm é feita no navegador (aproximadamente 41MB sem compressão).
 
 ## Honestidade dos dados
 
@@ -47,3 +47,7 @@ Controles HTML nativos, foco visível, labels, modo de movimento reduzido e fall
 - [Maracanomali público](https://github.com/hugo-antunes19/maracanomali-public).
 
 As fontes tipográficas do Google são opcionais e têm alternativas locais.
+
+## Apresentação para visitantes
+
+A página inicial prioriza textos em português, propósito dos projetos e detalhes sob demanda. Não exibe SQL, telemetria, metadados de tabelas, sidebar ou barra de status. O laboratório completo abre apenas em “Versão técnica”. O DuckDB-Wasm também só inicializa após essa escolha. A formação e as descrições continuam baseadas nas informações confirmadas do autor.

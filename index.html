@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Hugo Antunes — Engenharia de Dados e Computação. Conheça projetos de análise de dados, SQL e computação gráfica.">
+  <meta name="theme-color" content="#f4f3ed">
+  <title>Hugo Antunes — Engenharia de Dados e Computação</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+  <header class="header wrap">
+    <a class="brand" href="#inicio" aria-label="Hugo, início">hugo</a>
+    <nav aria-label="Navegação principal"><a href="#projetos">Projetos</a><a href="#sobre">Sobre</a><a class="nav-contact" href="#contato">Vamos conversar <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main id="conteudo">
+    <section id="inicio" class="hero wrap">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="dot"></span> HUGO ANTUNES / ENGENHARIA DE DADOS E COMPUTAÇÃO</p>
+        <h1>Da complexidade<br>à <em>clareza.</em></h1>
+        <p class="intro">Olá, eu sou Hugo Antunes. Atuo com Engenharia de Dados e estudo Engenharia de Computação e Informação na UFRJ. Aqui compartilho projetos que conectam dados, código e novas possibilidades.</p>
+        <a class="button" href="#projetos">Explore os projetos <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="hero-art" aria-label="Ilustração abstrata: conexões de dados formando a letra H" role="img">
+        <div class="art-top"><span>CONEXÕES QUE FAZEM SENTIDO</span><span>01 / 03</span></div>
+        <svg viewBox="0 0 460 400" aria-hidden="true">
+          <defs><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#648f7d" opacity=".4"/></pattern></defs>
+          <rect width="460" height="400" fill="url(#grid)"/>
+          <g fill="none" stroke="#8bb59e" stroke-width="1" opacity=".6"><path d="M0 300 130 224 230 280 330 224 460 300"/><path d="M0 124 130 200 230 144 330 200 460 124"/><path d="M130 0v400M330 0v400"/><circle cx="230" cy="200" r="150"/><circle cx="230" cy="200" r="105"/></g>
+          <g fill="#d6efb2"><path d="m100 84 64-37v138l132-76V47l64 37v232l-64 37V185l-132 76v92l-64-37z"/></g>
+          <g fill="#f4f3ed"><circle cx="100" cy="84" r="5"/><circle cx="360" cy="316" r="5"/><circle cx="164" cy="261" r="5"/></g>
+        </svg>
+        <div class="art-bottom"><span>IDEIA → ESTRUTURA → IMPACTO</span><span class="art-cross">+</span></div>
+      </div>
+      <div class="hero-foot"><span>Curiosidade para explorar. Cuidado para construir.</span><a href="#projetos">CONTINUE EXPLORANDO <span aria-hidden="true">↓</span></a></div>
+    </section>
+    <section id="projetos" class="projects wrap section">
+      <div class="section-heading"><div><p class="eyebrow">01 / NA PRÁTICA</p><h2>Projetos em foco<span>.</span></h2></div><p>Uma seleção de trabalhos,<br>do problema à solução.</p></div>
+      <p class="editor-note">Projetos públicos selecionados do meu GitHub. Explore o código e a documentação de cada trabalho.</p>
+      <div class="filters" role="group" aria-label="Filtrar projetos"><button class="filter active" type="button" data-filter="todos" aria-pressed="true">Todos</button><button class="filter" type="button" data-filter="analytics" aria-pressed="false">Analytics</button><button class="filter" type="button" data-filter="engenharia" aria-pressed="false">Banco de dados</button><button class="filter" type="button" data-filter="computacao" aria-pressed="false">Computação</button></div>
+      <p class="sr-only" id="filter-status" aria-live="polite"></p>
+      <div class="project-grid">
+        <article class="project" data-category="analytics">
+          <div class="project-cover dashboard" aria-hidden="true"><div class="analysis-art"><div class="pipe-label">EXPLORAR · COMPARAR · ENTENDER</div><strong>O jogo por<br>trás dos dados.</strong><div class="league-list"><span>LCK</span><span>LPL</span><span>LEC</span><span>LCS</span><span>CBLOL</span></div><small>LEAGUE OF LEGENDS / 2015—2026</small></div></div>
+          <div class="project-meta"><span>ANÁLISE DE DADOS / PUC-RIO</span><span>01</span></div><h3>League of Legends em perspectiva</h3><p>Análise exploratória de partidas profissionais para investigar estilos das ligas, evolução do jogo e relações entre vantagens iniciais e vitórias.</p><div class="tags"><span>Python</span><span>Pandas</span><span>Jupyter</span><span>Matplotlib</span></div><a class="project-link" href="https://github.com/hugo-antunes19/analise-de-dados-puc" target="_blank" rel="noopener noreferrer">Explore o projeto <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="project" data-category="engenharia">
+          <div class="project-cover pipeline" aria-hidden="true"><div class="pipe-label">ESTRUTURA PARA CONSULTAR E CONECTAR</div><div class="pipe-flow"><div><span>01</span><b>Tabelas</b></div><i>→</i><div><span>02</span><b>Dados</b></div><i>→</i><div><span>03</span><b>Consultas</b></div></div><div class="pipe-lines"><span></span><span></span><span></span><span></span><span></span></div><div class="pipe-footer">BANCO DE DADOS / SQL</div></div>
+          <div class="project-meta"><span>BANCO DE DADOS / PROJETO ACADÊMICO</span><span>02</span></div><h3>Da estrutura à consulta</h3><p>Um conjunto de scripts SQL para criação de tabelas, carga de dados e consultas, acompanhado de arquivos de teste para questões do trabalho.</p><div class="tags"><span>SQL</span><span>T-SQL</span><span>Banco de dados</span></div><a class="project-link" href="https://github.com/hugo-antunes19/Trabalho-BD-2025.1" target="_blank" rel="noopener noreferrer">Explore o projeto <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="project wide" data-category="computacao">
+          <div class="project-cover automation" aria-hidden="true"><svg class="game-art" viewBox="0 0 480 270"><g fill="none" stroke="#95ba7c" stroke-width="1.5"><ellipse cx="250" cy="135" rx="210" ry="120"/><ellipse cx="250" cy="135" rx="155" ry="90"/><ellipse cx="250" cy="135" rx="105" ry="61"/><ellipse cx="250" cy="135" rx="63" ry="36"/><path d="M40 135h420M250 15v240M90 55l320 160M90 215 410 55" opacity=".4"/></g><circle cx="250" cy="135" r="18" fill="#d6efb2"/><g fill="#d6efb2" opacity=".7"><circle cx="130" cy="125" r="5"/><circle cx="350" cy="190" r="7"/><circle cx="300" cy="70" r="4"/></g><text x="22" y="250" fill="#d6efb2" font-size="9" letter-spacing="2">RETROVÍRUS / COMPUTAÇÃO GRÁFICA</text></svg></div>
+          <div class="wide-content"><div class="project-meta"><span>COMPUTAÇÃO GRÁFICA / UFRJ</span><span>03</span></div><h3>RETROVÍRUS: código em movimento</h3><p>Jogo educativo 3D que acompanha a jornada de um vírus pelo corpo humano. Um projeto de computação gráfica com renderização em tempo real, shaders e geração procedural.</p><div class="tags"><span>Python</span><span>WebGL</span><span>GLSL</span><span>Raymarching</span></div><a class="project-link" href="https://github.com/hugo-antunes19/Final-CG-20261" target="_blank" rel="noopener noreferrer">Explore o projeto <span aria-hidden="true">↗</span></a></div>
+        </article>
+      </div>
+    </section>
+    <section id="sobre" class="about section"><div class="wrap about-grid"><div><p class="eyebrow">02 / ALÉM DOS PROJETOS</p><h2>Um pouco sobre<br>quem <em>constrói.</em></h2></div><div><p class="about-lead">Dados e computação.<br>Diferentes caminhos para explorar problemas.</p><p>Sou Hugo Antunes, profissional de Engenharia de Dados e estudante de Engenharia de Computação e Informação na UFRJ. Meu portfólio reúne projetos públicos que passam pela análise exploratória, pelos bancos de dados e pela computação gráfica.</p><div class="qualities"><div><span>01</span><h3>Investigar com dados</h3><p>Explorar perguntas, comparar cenários e apresentar análises.</p></div><div><span>02</span><h3>Construir com código</h3><p>Organizar informações e desenvolver soluções em software.</p></div><div><span>03</span><h3>Experimentar para aprender</h3><p>Conectar a formação em computação a projetos práticos.</p></div></div></div></div></section>
+    <section id="contato" class="contact wrap section"><p class="eyebrow">03 / PRÓXIMA CONEXÃO</p><h2>Boas ideias começam<br>com uma <em>conversa.</em></h2><div class="contact-bottom"><p>Vamos conectar projetos,<br>desafios e possibilidades.</p><div id="contact-links"><p class="pending">Seus links de contato entram aqui.<br>GitHub, LinkedIn e e-mail a confirmar.</p></div></div></section>
+  </main>
+  <footer class="wrap footer"><a class="brand" href="#inicio">hugo</a><p>Portfólio pessoal · <span id="year">2026</span></p><a href="#inicio">Voltar ao topo ↑</a></footer>
+  <noscript><p class="wrap">Os projetos estão todos visíveis. Ative JavaScript para usar os filtros.</p></noscript>
+</body>
+</html>
